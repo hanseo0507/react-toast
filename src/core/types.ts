@@ -21,3 +21,14 @@ export enum ToastType {
 export const ToastPositionValues = Object.values(ToastPosition);
 
 export type EnqueuedToast = { id: number; props: ToastProps };
+
+export interface ToastOptions {
+  position?: ToastPosition;
+  duration?: number;
+}
+
+export type ToastHandler = (props: ToastProps, options?: ToastOptions) => void;
+export type TypeToastHandler = (props: Pick<ToastProps, 'text'>, options?: ToastOptions) => void;
+
+export type ToastFunction = ToastHandler & Record<ToastType, TypeToastHandler>;
+export type ToastPositionQueueMap = Map<ToastPosition, EnqueuedToast[]>;

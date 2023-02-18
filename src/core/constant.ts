@@ -1,6 +1,6 @@
 import { ToastProps } from '../components';
 
-export const TOAST_EMOJI_PROPS_BY_TYPES: Record<
+export const TYPE_TOAST_EMOJI_PROPS: Record<
   'success' | 'warning' | 'error' | 'info',
   Pick<ToastProps, 'emoji' | 'emojiBackground'>
 > = {
