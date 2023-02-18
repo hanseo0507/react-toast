@@ -17,7 +17,7 @@
     "prepare": "husky install && cd ./demo && yarn",
     "lint": "eslint --fix --cache",
     "format": "prettier --write",
-    "dev": "rimraf dist && microbundle watch --jsx React.createElement",
+    "dev": "rimraf dist && microbundle watch --jsx React.createElement --no-compress",
     "build": "rimraf dist && microbundle --jsx React.createElement --jsxFragment React.Fragment"
   },
   "peerDependencies": {
