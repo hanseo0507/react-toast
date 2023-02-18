@@ -1,0 +1,47 @@
+{
+  "name": "@hanseo0507/react-toast",
+  "version": "0.0.0",
+  "repository": "https://github.com/hanseo0507/react-toast.git",
+  "author": "HanSu Lee <i.hansu.lee@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "dist/react-toast.cjs",
+  "module": "dist/react-toast.esm.js",
+  "umd:main": "dist/react-toast.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "husky install && cd ./demo && yarn",
+    "lint": "eslint --fix --cache",
+    "format": "prettier --write",
+    "dev": "rimraf dist && microbundle watch --jsx React.createElement",
+    "build": "rimraf dist && microbundle --jsx React.createElement --jsxFragment React.Fragment"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "microbundle": "^0.15.1",
+    "prettier": "^2.8.4",
+    "rimraf": "^4.1.2",
+    "typescript": "^4.9.5"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix --cache",
+      "prettier --write"
+    ]
+  }
+}
