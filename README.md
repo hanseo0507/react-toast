@@ -1,5 +1,7 @@
 # @hanseo0507/react-toast
 
+![alt text](./docs/thumbnail.png)
+
 ## Installation
 
 ```sh
