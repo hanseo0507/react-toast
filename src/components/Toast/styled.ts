@@ -18,6 +18,7 @@ export const ToastContainer = styled(motion.div)`
   gap: 18px;
   padding: 12px;
   border-radius: 12px;
+  overflow: hidden;
 `;
 
 export const ToastEmojiContainer = styled.div<{ background: ToastEmojiBackground }>`

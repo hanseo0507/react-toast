@@ -37,6 +37,7 @@ export const ToastMessageContainer = styled.div<{ position: ToastPosition }>(({ 
   position: 'fixed',
   zIndex: -1,
   ...positionStyles[position],
+  transition: 'all 1s',
 
   '& > div:not(:last-child)': {
     marginBottom: '8px',

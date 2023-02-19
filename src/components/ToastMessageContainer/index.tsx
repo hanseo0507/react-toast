@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { AnimatePresence } from 'framer-motion';
+
 import { EnqueuedToast, ToastPosition } from '../../core';
 import { Toast } from '../Toast';
 
@@ -16,9 +18,11 @@ export const ToastMessagesContainer: React.FC<ToastMessagesContainerProps> = ({
 }) => {
   return (
     <S.ToastMessageContainer position={position}>
-      {messages.map(({ id, props }) => (
-        <Toast key={id} {...props} />
-      ))}
+      <AnimatePresence>
+        {messages.map(({ id, props, options }) => (
+          <Toast key={id} options={options} {...props} />
+        ))}
+      </AnimatePresence>
     </S.ToastMessageContainer>
   );
 };

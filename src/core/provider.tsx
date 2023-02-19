@@ -17,7 +17,12 @@ import {
 
 export type ToastProviderProps = ToastOptions & { children?: React.ReactNode };
 
-const ToastContext = createContext<ToastFunction | null>(null);
+export type ToastProviderContext = {
+  toast: ToastFunction;
+  config: ToastOptions;
+};
+
+const ToastContext = createContext<ToastProviderContext | null>(null);
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({
   children,
@@ -54,7 +59,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
   const add: ToastHandler = (props, _options) => {
     const options = Object.assign({ position, duration }, _options) as Required<ToastOptions>;
     saveQueue(options.position, (queueMap, queue) => {
-      queue.push({ id: ++toastId.current, props });
+      queue.push({ id: ++toastId.current, props, options });
       closeDuration(toastId.current, options.position, options.duration);
 
       return queueMap;
@@ -74,7 +79,15 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
   );
 
   return (
-    <ToastContext.Provider value={toast}>
+    <ToastContext.Provider
+      value={{
+        toast,
+        config: {
+          position,
+          duration,
+        },
+      }}
+    >
       <div>
         {ToastPositionValues.map((position) => (
           <ToastMessagesContainer
