@@ -43,7 +43,7 @@ export const App: React.FC = () => {
               if (type === 'none')
                 return toast(
                   { emoji: '🎉', emojiBackground: ['70deg', '#ECA0FF', '#778DFF'], text },
-                  { position }
+                  { position, duration: 3000 }
                 );
               return toast[type]({ text }, { position });
             }}

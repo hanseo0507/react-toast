@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ToastEmojiBackground } from '.';
 
 export const ToastContainer = styled(motion.div)`
+  position: relative;
   width: 340px;
   display: flex;
   align-items: center;
@@ -44,4 +45,30 @@ export const ToastText = styled.p`
   font-weight: 700;
   color: #000000;
   margin: 0;
+`;
+
+export const ToastProgressBarContainer = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+`;
+
+export const ToastProgressBar = styled.div<{ background: ToastEmojiBackground }>`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: ${({ background }) =>
+    Array.isArray(background) ? `linear-gradient(${background.join(', ')})` : background};
+`;
+
+export const ToastProgressBarHider = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 3px;
+  background-color: white;
 `;

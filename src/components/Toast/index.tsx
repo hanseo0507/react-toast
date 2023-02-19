@@ -6,14 +6,15 @@ import { ToastOptions, ToastPosition } from '../../core';
 
 import * as S from './styled';
 
-export type ToastEmojiBackground = string | [string, string] | [string, string, string];
+export type ToastAtomBackground = string | [string, string] | [string, string, string];
 export type ToastText = string | [string, string];
 
 export interface ToastProps {
   emoji: string;
-  emojiBackground: ToastEmojiBackground;
   text: ToastText;
-  options?: Required<ToastOptions>;
+  emojiBackground: ToastAtomBackground;
+  progressBackground?: ToastAtomBackground;
+  options: Required<ToastOptions>;
 }
 
 const toastAnimations: Record<ToastPosition, AnimationProps> = {
@@ -49,13 +50,17 @@ const toastAnimations: Record<ToastPosition, AnimationProps> = {
   },
 };
 
-export const Toast: React.FC<ToastProps> = ({ emoji, emojiBackground, text, options }) => {
+export const Toast: React.FC<ToastProps> = ({
+  emoji,
+  emojiBackground,
+  text,
+  progressBackground = emojiBackground,
+  options,
+}) => {
   return (
     <S.ToastContainer
-      {...(options?.position && {
-        ...toastAnimations[options.position],
-        transition: { type: 'spring', duration: 0.35 },
-      })}
+      transition={{ type: 'spring', duration: 0.35 }}
+      {...toastAnimations[options.position]}
     >
       <S.ToastEmojiContainer background={emojiBackground}>{emoji}</S.ToastEmojiContainer>
       <S.ToastTextContainer>
@@ -68,6 +73,15 @@ export const Toast: React.FC<ToastProps> = ({ emoji, emojiBackground, text, opti
           <S.ToastText>{text}</S.ToastText>
         )}
       </S.ToastTextContainer>
+
+      <S.ToastProgressBarContainer>
+        <S.ToastProgressBar background={progressBackground} />
+        <S.ToastProgressBarHider
+          initial={{ width: 0 }}
+          animate={{ width: '100%' }}
+          transition={{ duration: (options ? options.duration : 0) / 1000 }}
+        />
+      </S.ToastProgressBarContainer>
     </S.ToastContainer>
   );
 };
