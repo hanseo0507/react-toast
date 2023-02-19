@@ -14,6 +14,8 @@ export const ToastContainer = styled(motion.div)`
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
 export const ToastEmojiContainer = styled.div<{ background: ToastAtomBackground }>`
