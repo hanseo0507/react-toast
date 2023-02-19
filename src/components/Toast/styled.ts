@@ -3,15 +3,8 @@ import { motion } from 'framer-motion';
 
 import { ToastEmojiBackground } from '.';
 
-export const ToastsContainer = styled.div`
-  & > div:not(:last-child) {
-    margin-bottom: 12px;
-  }
-`;
-
 export const ToastContainer = styled(motion.div)`
   width: 340px;
-
   display: flex;
   align-items: center;
   background-color: white;
@@ -19,6 +12,7 @@ export const ToastContainer = styled(motion.div)`
   padding: 12px;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
 `;
 
 export const ToastEmojiContainer = styled.div<{ background: ToastEmojiBackground }>`
