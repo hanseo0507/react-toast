@@ -1,6 +1,7 @@
 {
   "name": "@hanseo0507/react-toast",
-  "version": "0.0.0",
+  "description": "Toast your messages with Emoji",
+  "version": "1.0.0",
   "repository": "https://github.com/hanseo0507/react-toast.git",
   "author": "HanSu Lee <i.hansu.lee@gmail.com>",
   "license": "MIT",
