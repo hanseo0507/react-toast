@@ -1,5 +1,7 @@
 # @hanseo0507/react-toast
 
+[![npm version](https://badge.fury.io/js/@hanseo0507%2Freact-toast.svg)](https://badge.fury.io/js/@hanseo0507%2Freact-toast)
+
 ![alt text](./docs/thumbnail.png)
 
 ## Installation
