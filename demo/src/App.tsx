@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useToast, ToastPosition, ToastType } from '../../';
 
 export const App: React.FC = () => {
-  const toast = useToast();
+  const { toast } = useToast();
   const [type, setType] = useState<ToastType | 'none'>('none');
 
   return (
@@ -21,6 +21,7 @@ export const App: React.FC = () => {
         {Object.values(ToastType).map((_type) => (
           <>
             <input
+              key={_type}
               id={_type}
               type="radio"
               value={_type}
