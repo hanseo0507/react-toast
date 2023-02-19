@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-import { ToastEmojiBackground } from '.';
+import { ToastAtomBackground } from '.';
 
 export const ToastContainer = styled(motion.div)`
   position: relative;
@@ -16,7 +16,7 @@ export const ToastContainer = styled(motion.div)`
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
 `;
 
-export const ToastEmojiContainer = styled.div<{ background: ToastEmojiBackground }>`
+export const ToastEmojiContainer = styled.div<{ background: ToastAtomBackground }>`
   position: relative;
   width: 48px;
   height: 48px;
@@ -55,7 +55,7 @@ export const ToastProgressBarContainer = styled.div`
   height: 3px;
 `;
 
-export const ToastProgressBar = styled.div<{ background: ToastEmojiBackground }>`
+export const ToastProgressBar = styled.div<{ background: ToastAtomBackground }>`
   position: absolute;
   top: 0;
   width: 100%;
