@@ -1,6 +1,7 @@
 # @hanseo0507/react-toast
 
-[![npm version](https://badge.fury.io/js/@hanseo0507%2Freact-toast.svg)](https://badge.fury.io/js/@hanseo0507%2Freact-toast)
+![npm version](https://img.shields.io/npm/v/@hanseo0507/react-toast)
+![npm downloads](https://img.shields.io/npm/dm/@hanseo0507/react-toast)
 
 ![alt text](./docs/thumbnail.png)
 
