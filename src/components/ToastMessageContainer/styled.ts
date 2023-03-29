@@ -35,7 +35,7 @@ const positionStyles: Record<ToastPosition, CSSProperties> = {
 
 export const ToastMessageContainer = styled.div<{ position: ToastPosition }>(({ position }) => ({
   position: 'fixed',
-  zIndex: -1,
+  zIndex: 9999,
   ...positionStyles[position],
   transition: 'all 1s',
 
