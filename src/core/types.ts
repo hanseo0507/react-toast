@@ -32,7 +32,7 @@ export interface ToastOptions {
 }
 
 export type ToastHandler = (props: Omit<ToastProps, 'options'>, options?: ToastOptions) => void;
-export type TypeToastHandler = (props: Pick<ToastProps, 'text'>, options?: ToastOptions) => void;
+export type TypeToastHandler = (text: ToastProps['text'], options?: ToastOptions) => void;
 
 export type ToastFunction = ToastHandler & { [type in ToastType]: TypeToastHandler };
 export type ToastPositionQueueMap = Map<ToastPosition, EnqueuedToast[]>;

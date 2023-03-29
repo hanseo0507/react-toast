@@ -69,12 +69,12 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
   const toast: ToastFunction = Object.assign<ToastHandler, Record<ToastType, TypeToastHandler>>(
     add,
     {
-      success: ({ text }, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['success'] }, options),
-      warn: ({ text }, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['warning'] }, options),
-      warning: ({ text }, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['warning'] }, options),
-      danger: ({ text }, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['error'] }, options),
-      error: ({ text }, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['error'] }, options),
-      info: ({ text }, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['info'] }, options),
+      success: (text, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['success'] }, options),
+      warn: (text, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['warning'] }, options),
+      warning: (text, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['warning'] }, options),
+      danger: (text, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['error'] }, options),
+      error: (text, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['error'] }, options),
+      info: (text, options) => add({ text, ...TYPE_TOAST_EMOJI_PROPS['info'] }, options),
     }
   );
 
